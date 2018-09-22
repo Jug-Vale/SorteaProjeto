@@ -13,7 +13,12 @@ public class SoundProvider {
 
     final static Random RANDOM = new Random();
 
-    final static String[] SONGS = { "ssantos.mp3", "ohyeah.mp3" };
+    final static String[] SONGS = { "ssantos.mp3", 
+                    "ohyeah.mp3", 
+                    "TheCavalryCharge.mp3", 
+                    "VoicesofSpring.mp3",
+                    "amclassical_beethoven_fur_elise.mp3"
+    };
 
     static List<AudioClip> clips;
 
