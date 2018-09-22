@@ -11,6 +11,7 @@ import java.util.stream.Collectors;
 import java.util.stream.LongStream;
 
 import org.jugvale.sorteioapp.service.SorteioAppService;
+import org.jugvale.sorteioapp.sound.SoundProvider;
 
 import javafx.animation.AnimationTimer;
 import javafx.animation.FadeTransition;
@@ -54,7 +55,6 @@ public class SorteaProjeto extends Application {
 
 
 	// ARQUIVOS CARREGADOS
-	final String AUDIO_URL = getClass().getResource("/audio/ssantos.mp3").toString();
 	final ImageView IMG_PARAR = new ImageView(new Image("/icones/parar.png"));
 	final ImageView IMG_INFO = new ImageView(new Image("/icones/info.png"));
 	final ImageView IMG_TOCAR = new ImageView(new Image("/icones/tocar.png"));
@@ -86,7 +86,7 @@ public class SorteaProjeto extends Application {
 	SimpleBooleanProperty listaVazia = new SimpleBooleanProperty(false);
 	
 	// música do Sílvio Santos
-	AudioClip clip = new AudioClip(AUDIO_URL);
+	AudioClip clip = SoundProvider.get();
 	
 	// elementos de interface
 	final BorderPane raiz = new BorderPane();
@@ -202,6 +202,7 @@ public class SorteaProjeto extends Application {
 		btnComecar.setOnAction(e -> {
 			timerPrincipal.start();
 			tocando.set(true);
+			clip = SoundProvider.get();
 			clip.play();
 		});
 		// muito código aqui... melhorar
