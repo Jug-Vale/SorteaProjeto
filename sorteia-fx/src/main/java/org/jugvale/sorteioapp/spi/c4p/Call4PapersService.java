@@ -23,7 +23,7 @@ import org.jugvale.sorteioapp.spi.c4p.impl.Inscricao;
 public class Call4PapersService implements SorteioAppService {
 
 	private static final String ID_EVENTO = "evento_id";
-	private final String BASE_URL = "http://call4papers-jugvale.rhcloud.com/rest/evento/";
+	private final String BASE_URL = "http://18.219.36.7:8080/jug-cfp-server/rest/evento/";
 	private final String MEDIA_TYPE = "application/json";
 	private final String C4P_PROPS = "/c4p.properties";
 	private final ResteasyClient client;
