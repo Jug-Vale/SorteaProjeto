@@ -3,6 +3,7 @@ package org.jugvale.sorteioapp.service;
 import java.util.List;
 import java.util.Objects;
 
+import org.jugvale.sorteioapp.service.impl.arquivo.ArquivoSorteioAppService;
 import org.jugvale.sorteioapp.spi.c4p.Call4PapersService;
 
 /**
@@ -34,7 +35,7 @@ public interface SorteioAppService {
 				
 				// TODO: chamada a um SPI manualmente
 				// deveria ser configurável para que usuários pudessem plugar os seus provedores de valores para sorteio
-				INSTANCE = new Call4PapersService();
+				INSTANCE = new ArquivoSorteioAppService();
 			}
 			return INSTANCE;
 		}
